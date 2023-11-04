@@ -55,4 +55,4 @@ Going through the `components/InlinePanel.ts` makes me _think_ more attributes a
 
 ### Technical details
 
-- Wagtail version: 5.1.3
+- Wagtail version: 5.2
