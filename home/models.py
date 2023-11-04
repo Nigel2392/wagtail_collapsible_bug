@@ -134,6 +134,12 @@ class InlineOfficeHoursPanel(InlinePanel):
         kwargs["max_num"] = 7
         super().__init__(*args, **kwargs)
 
+    @cached_property
+    def child_edit_handler(self):
+        panels = self.panel_definitions
+        child_edit_handler = MultiFieldPanel(panels, heading=self.heading, classname="collapsible collapsed")
+        return child_edit_handler.bind_to_model(self.db_field.related_model)
+
     class BoundPanel(InlinePanel.BoundPanel):
         def __init__(self, *args, **kwargs):
             super().__init__(*args, **kwargs)
